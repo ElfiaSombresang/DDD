@@ -1,73 +1,100 @@
-# Projet : Développement Orienté Objet - Gestion d'une École
+# Projet École - Architecture DDD (Domain Driven Design)
 
-## Objectif
-Ce projet est une application Python qui illustre les principes de **programmation orientée objet** et de **Clean Architecture (DDD / Domain-Driven Design)**.  
-Il permet de gérer les entités d'une école : **élèves, cours, professeurs et notes** à travers une structure modulaire.
+Ce projet est une implémentation en Python d'une gestion d'école suivant l'architecture **Domain Driven Design (DDD)**.  
+Il permet de gérer les élèves, les cours, les professeurs et les notes, avec séparation claire entre **domain**, **usecases** et **infrastructure**.
 
 ---
 
-## Structure du projet
+## 🚀 Prérequis
+
+- Python 3.10 ou plus
+- `pip` pour installer les dépendances
+- Virtualenv recommandé
+
+---
+
+## 📦 Installation
+
+1. Cloner le dépôt :
+   ```bash
+   git clone <url-du-repo>
+   cd Dev_oriente_objet
+   ```
+
+2. Créer un environnement virtuel :
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate   # macOS / Linux
+   .venv\Scripts\activate    # Windows
+   ```
+
+3. Installer les dépendances :
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 🏗️ Structure du projet
+
 ```
 Dev_oriente_objet/
-│── main.py                 # Point d'entrée principal
-│── requirements.txt        # Dépendances Python
-│── README.md               # Documentation
-│
-├── ecole/
-│   ├── domain/             # Couches métier
-│   │   ├── entity/         # Entités (Eleve, Professeur, Cours, Note)
-│   │   └── repository/     # Interfaces des repositories
+│── ecole/
+│   ├── domain/          # Entités, interfaces, règles métier
+│   │   ├── entity/
+│   │   ├── repository/
+│   │   └── service/
 │   │
-│   ├── infrastructure/     # Implémentations concrètes (ex: mémoire)
-│   └── usecases/           # Cas d'utilisation (ajouter élève, récupérer infos, etc.)
+│   ├── usecases/        # Cas d’usage (logique applicative)
+│   │   ├── ajouter_eleve.py
+│   │   ├── recuperer_information_eleve.py
+│   │   └── ...
+│   │
+│   ├── infrastructure/  # Implémentations concrètes des dépôts
+│   │   └── eleve_repository.py
+│   │
+│   └── __init__.py
 │
-└── .venv/                  # Environnement virtuel (non inclus dans le dépôt Git)
+│── tests/               # Tests unitaires et d’intégration
+│── main.py              # Point d’entrée principal
+│── requirements.txt     # Dépendances Python
+│── README.md            # Documentation du projet
 ```
 
 ---
 
-## Installation
-### 1. Cloner le projet
-```bash
-git clone https://github.com/votrecompte/projet_ecole.git
-cd projet_ecole/Dev_oriente_objet
-```
+## ▶️ Exécution
 
-### 2. Créer un environnement virtuel
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Linux/Mac
-.venv\Scripts\activate      # Windows
-```
+Lancer le programme principal :
 
-### 3. Installer les dépendances
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Exécution
-Lancer le projet :
 ```bash
 python main.py
 ```
 
----
-
-## Exemple d'utilisation
-- Ajouter un élève  
-- Récupérer ses informations  
-- Vérifier ses cours  
-- Associer des notes  
-
-Le fichier `main.py` contient des **scénarios de test** pour démontrer les fonctionnalités.
+Celui-ci permet d’ajouter des élèves, de les inscrire à des cours et de récupérer leurs informations.
 
 ---
 
-## Architecture
-- **Entities** : représentent les objets métier (Élève, Cours, Professeur, Note).  
-- **Repository Interfaces** : définissent les contrats d’accès aux données.  
-- **Use Cases** : implémentent la logique métier (ajouter un élève, récupérer un élève par ID, etc.).  
-- **Infrastructure** : implémente les repositories (exemple en mémoire).  
+## 🧪 Tests
 
+Les tests sont disponibles dans le dossier `tests/`.
+
+Exécuter tous les tests :
+
+```bash
+pytest tests/
+```
+
+---
+
+## 📖 Notes
+
+- Le projet suit une architecture **DDD** pour séparer la logique métier (domain), les cas d’usage (usecases) et l’infrastructure.
+- Les données sont stockées en mémoire dans des listes Python pour l’instant (implémentation simplifiée).
+
+---
+
+## ✨ Auteurs
+
+- Projet réalisé dans le cadre du cours de **Développement Orienté Objet (M1)**  
+- Auteur : *Priscillia Marques Rodrigues*
