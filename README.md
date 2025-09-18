@@ -40,25 +40,25 @@ Il permet de gérer les élèves, les cours, les professeurs et les notes, avec 
 ```
 Dev_oriente_objet/
 │── ecole/
-│   ├── domain/          # Entités, interfaces, règles métier
+│   ├── domain/          
 │   │   ├── entity/
 │   │   ├── repository/
 │   │   └── service/
 │   │
-│   ├── usecases/        # Cas d’usage (logique applicative)
+│   ├── usecases/        
 │   │   ├── ajouter_eleve.py
 │   │   ├── recuperer_information_eleve.py
 │   │   └── ...
 │   │
-│   ├── infrastructure/  # Implémentations concrètes des dépôts
+│   ├── infrastructure/  
 │   │   └── eleve_repository.py
 │   │
 │   └── __init__.py
 │
-│── tests/               # Tests unitaires et d’intégration
-│── main.py              # Point d’entrée principal
-│── requirements.txt     # Dépendances Python
-│── README.md            # Documentation du projet
+│── tests/               
+│── main.py              
+│── requirements.txt     
+│── README.md           
 ```
 
 ---
